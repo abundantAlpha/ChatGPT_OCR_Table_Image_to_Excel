@@ -39,10 +39,10 @@ def convert_table_image_to_excel():
             base64_image = base64.b64encode(image_bytes).decode('utf-8')
 
             system = [{"role": "system", "content": """
-            You are ChatPal, an AI assistant powered by GPT-4o, with computer vision.
+            You are an AI assistant with computer vision.
             You only output lists of dictionaries. Any other unit of communication is not allowed.
     
-            Built-in vision capabilities:
+            Your built-in vision capabilities include:
             - extract numbers from image
             - understand table structures and logic
             - logical problem solving requiring reasoning and contextual consideration
