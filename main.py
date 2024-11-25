@@ -104,9 +104,9 @@ def convert_table_image_to_excel():
     try:
         image = get_image_from_clipboard()
         if image:
-            my_df = create_table(image, api_key)
-            if my_df is not None:
-                my_df.to_csv(output_file_path)
+            df = create_table(image, api_key)
+            if df is not None:
+                df.to_csv(output_file_path)
                 os.startfile(output_file_path)
             else:
                 raise ValueError("Failed to create the DataFrame from the image.")
