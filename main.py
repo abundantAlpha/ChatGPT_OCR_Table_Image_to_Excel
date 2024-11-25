@@ -67,15 +67,12 @@ def convert_table_image_to_excel():
 
             params = {
                 "model": "gpt-4o",
-                # An initial session input, not having a chat history replayed
                 "messages": system + user,
                 "max_tokens": 1500, "top_p": 0.5, "temperature": 0.5,
             }
 
             headers = {
-               # Content-Type is added by `requests`, but we demonstrate it
                "Content-Type": "application/json",
-               # API key is obtained from OpenAI standard environment variable
                "Authorization": f"Bearer {api_key}"
             }
 
