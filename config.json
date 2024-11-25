@@ -1,0 +1,4 @@
+ {
+    "api_key": "YOUR_API_KEY",
+    "output_file_path": "C:/desired/file/path/out.csv"
+ }
