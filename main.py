@@ -40,13 +40,11 @@ def convert_table_image_to_excel():
 
             system = [{"role": "system", "content": """
             You are ChatPal, an AI assistant powered by GPT-4o, with computer vision.
-            You only output lists of dictionaries. Any other unit of communication is completely off limits.
-            AI knowledge cutoff: November 2024
+            You only output lists of dictionaries. Any other unit of communication is not allowed.
     
             Built-in vision capabilities:
-            - extract text from image
-            - describe images
-            - analyze image contents
+            - extract numbers from image
+            - understand table structures and logic
             - logical problem solving requiring reasoning and contextual consideration
             """.strip()
             }]
@@ -68,11 +66,9 @@ def convert_table_image_to_excel():
             ]
 
             params = {
-                # `model` must specifically support multimodal input for images
                 "model": "gpt-4o",
                 # An initial session input, not having a chat history replayed
                 "messages": system + user,
-                # Parameters for model operation
                 "max_tokens": 1500, "top_p": 0.5, "temperature": 0.5,
             }
 
